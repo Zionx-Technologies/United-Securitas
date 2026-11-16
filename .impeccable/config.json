@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "montserrat",
+        "createdAt": "2026-11-13T05:28:53.065Z",
+        "reason": "Template match: user asked to rebuild the site on the SecurePress template, whose headings are set in Montserrat"
+      }
+    ]
+  }
+}

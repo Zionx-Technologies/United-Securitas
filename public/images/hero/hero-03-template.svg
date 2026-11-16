@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+<defs>
+<linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#232427"/><stop offset="1" stop-color="#3c3d41"/></linearGradient>
+<pattern id="p" width="48" height="48" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="2" height="48" fill="#c9a266" opacity=".07"/></pattern>
+</defs>
+<rect width="1920" height="1080" fill="url(#g)"/>
+<rect x="864" width="1056" height="1080" fill="url(#p)"/>
+<rect x="40" y="40" width="824" height="1000" fill="none" stroke="#c9a266" stroke-opacity=".35" stroke-width="3" stroke-dasharray="14 12"/>
+<text x="80" y="1000" fill="#c9a266" fill-opacity=".55" font-family="Arial, sans-serif" font-size="26" letter-spacing="3">TEXT-SAFE ZONE · KEEP CALM &amp; DARK</text>
+<g transform="translate(1392 540)" text-anchor="middle" font-family="Arial, sans-serif">
+<path d="M0-170 L120-130 L120 0 C120 90 60 140 0 170 C-60 140 -120 90 -120 0 L-120-130 Z" fill="none" stroke="#c9a266" stroke-width="6" opacity=".6" transform="translate(0 -110) scale(.55)"/>
+<text y="40" fill="#e9eaec" font-size="64" font-weight="700" letter-spacing="4">HERO SLIDE 03</text>
+<text y="96" fill="#b4b8be" font-size="30">Guard on night round · blue hour</text>
+<text y="150" fill="#c9a266" font-size="26">Replace with /images/hero/hero-03.jpg · 1920×1080</text>
+</g>
+</svg>

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Security Services in Chennai | United Securitas</title>
+    <meta
+      name="description"
+      content="United Securitas provides trained, supervised security guards in Chennai for apartments, offices, factories and events. Book a free site survey today."
+    />
+    <link rel="canonical" href="https://unitedsecuritas.com/" />
+    <meta property="og:title" content="Security Services in Chennai | United Securitas" />
+    <meta
+      property="og:description"
+      content="Trained, supervised security guards in Chennai for apartments, offices, factories and events. Book a free site survey today."
+    />
+    <meta property="og:image" content="/images/banner-03.jpg" />
+    <meta name="theme-color" content="#2F3033" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" href="/logo.png" as="image" />
+    <!-- Page loader styles: inline so the loader paints before any other CSS arrives -->
+    <style>
+      html.is-loading {
+        overflow: hidden;
+      }
+      .loader {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+        background: #1c1d20;
+        transition:
+          opacity 0.6s ease,
+          visibility 0.6s;
+      }
+      .loader.is-done {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .loader__logo {
+        width: 96px;
+        height: auto;
+        filter: drop-shadow(0 0 28px rgba(201, 162, 102, 0.28));
+        animation: loader-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+      }
+      .loader__bar {
+        position: relative;
+        width: min(260px, 64vw);
+        height: 3px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.12);
+        animation: loader-in 0.9s 0.15s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+      }
+      .loader__fill {
+        position: absolute;
+        inset: 0;
+        background: #c9a266;
+        transform: scaleX(0);
+        transform-origin: left center;
+      }
+      .loader__pct {
+        margin: -12px 0 0;
+        font: 700 14px/1 Montserrat, 'Segoe UI', Arial, sans-serif;
+        letter-spacing: 0.16em;
+        color: #c9a266;
+        font-variant-numeric: tabular-nums;
+        animation: loader-in 0.9s 0.25s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+      }
+      .loader.is-done .loader__logo {
+        transform: scale(0.94);
+        transition: transform 0.6s ease;
+      }
+      @keyframes loader-in {
+        from {
+          opacity: 0;
+          transform: translateY(14px);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .loader,
+        .loader * {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+    <noscript><style>.loader { display: none; } html.is-loading { overflow: auto; }</style></noscript>
+  </head>
+  <body>
+    <!-- Page loader: logo + bar that fills 0 → 100% while the first page loads -->
+    <div
+      id="loader"
+      class="loader"
+      role="progressbar"
+      aria-label="Loading United Securitas"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-valuenow="0"
+    >
+      <img class="loader__logo" src="/logo.png" alt="" width="96" height="126" fetchpriority="high" />
+      <div class="loader__bar"><span class="loader__fill"></span></div>
+      <p class="loader__pct"><span class="loader__num">0</span>%</p>
+    </div>
+    <script>
+      // Drives the loader. The bar follows the real page load: the HTML parsed, the web
+      // fonts ready, then every first-screen file loaded (window "load") takes it to 100%.
+      // Between those points it creeps forward so it never looks stuck, stopping short of
+      // 90% until the page really is ready. Shown for at least MIN ms so it doesn't flash,
+      // and never longer than MAX ms, so one slow file can't hold the site hostage.
+      ;(function () {
+        var root = document.documentElement
+        var el = document.getElementById('loader')
+        if (!el) return
+        root.classList.add('is-loading')
+
+        var fill = el.querySelector('.loader__fill')
+        var num = el.querySelector('.loader__num')
+        var MIN = 1200
+        var MAX = 10000
+        var start = performance.now()
+        var target = 0
+        var shown = 0
+        var loaded = false
+        var finished = false
+
+        function reach(v) {
+          if (v > target) target = v
+        }
+        function complete() {
+          loaded = true
+          target = 100
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+          reach(45)
+        })
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(function () {
+            reach(70)
+          })
+        }
+        function onLoad() {
+          setTimeout(complete, Math.max(0, MIN - (performance.now() - start)))
+        }
+        if (document.readyState === 'complete') onLoad()
+        else window.addEventListener('load', onLoad)
+        setTimeout(complete, MAX)
+
+        function tick(now) {
+          if (!loaded) reach(90 * (1 - Math.exp(-(now - start) / 1800)))
+          shown += (target - shown) * (loaded ? 0.14 : 0.06)
+          if (target - shown < 0.25) shown = target
+          var n = Math.floor(shown)
+          fill.style.transform = 'scaleX(' + shown / 100 + ')'
+          num.textContent = n
+          el.setAttribute('aria-valuenow', n)
+          if (loaded && n >= 100) return finish()
+          requestAnimationFrame(tick)
+        }
+
+        function finish() {
+          if (finished) return
+          finished = true
+          // hold 100% for a beat, then fade out and hand over to the page
+          setTimeout(function () {
+            el.classList.add('is-done')
+            root.classList.remove('is-loading')
+            window.dispatchEvent(new Event('loader:done'))
+            setTimeout(function () {
+              el.remove()
+            }, 700)
+          }, 250)
+        }
+
+        requestAnimationFrame(tick)
+      })()
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
